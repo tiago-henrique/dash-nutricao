@@ -4,51 +4,51 @@ import plotly.express as px
 
 st.set_page_config(layout='wide')
 
-uploaded_file = st.file_uploader(
-    "Selecione o arquivo CSV", accept_multiple_files=False
-)
+#uploaded_file = st.file_uploader(
+#    "Selecione o arquivo CSV", accept_multiple_files=False
+#)
 
-if uploaded_file != None:
-    df = pd.read_csv(uploaded_file)
+#if uploaded_file != None:
+#    df = pd.read_csv(uploaded_file)
 
-    pc = df['data'].count()
-    rt = df['data_v2'].count()
+pc = df['data'].count()
+rt = df['data_v2'].count()
 
-    topografias = {
-        1: 'Aparelho digestivo alto',
-        2: 'Aparelho digestivo baixo',
-        3: 'Bilio pancreática',
-        4: 'Fígado',
-        5: 'Ginecologia',
-        6: 'Hematologia',
-        7: 'Mastologia',
-        8: 'Otorrino',
-        9: 'Pulmão',
-        10: 'Urologia',
-        11: 'Neurologia',
-        12: 'Pele/Melanoma',
-        13: 'Outros oncológicos',
-        14: 'Não oncológicos'
-    }
+topografias = {
+    1: 'Aparelho digestivo alto',
+    2: 'Aparelho digestivo baixo',
+    3: 'Bilio pancreática',
+    4: 'Fígado',
+    5: 'Ginecologia',
+    6: 'Hematologia',
+    7: 'Mastologia',
+    8: 'Otorrino',
+    9: 'Pulmão',
+    10: 'Urologia',
+    11: 'Neurologia',
+    12: 'Pele/Melanoma',
+    13: 'Outros oncológicos',
+    14: 'Não oncológicos'
+}
 
-    modalidade_tratamento = {
-        1: 'Estadiamento',
-        2: 'Clínico',
-        3: 'Cirúrgico (até 45 dias pré ou pós)',
-        4: 'Reestadiamento',
-        5: 'Seguimento clínico',
-        6: 'Cuidados paliativo pleno'
-    }
+modalidade_tratamento = {
+    1: 'Estadiamento',
+    2: 'Clínico',
+    3: 'Cirúrgico (até 45 dias pré ou pós)',
+    4: 'Reestadiamento',
+    5: 'Seguimento clínico',
+    6: 'Cuidados paliativo pleno'
+}    
 
-    ganho_ponderal = {
-        1: 'Ganho intencional',
-        2: 'Manutenção',
-        3: 'Falha do emagrecimento'
-    }
+ganho_ponderal = {
+    1: 'Ganho intencional',
+    2: 'Manutenção',
+    3: 'Falha do emagrecimento'
+}
 
-    perda_ponderal = {
-        1: 'Intencional',
-        2: 'Perda Ponderal não Intencional'
+perda_ponderal = {
+    1: 'Intencional',
+    2: 'Perda Ponderal não Intencional'
     }
 
     asg = {
@@ -107,7 +107,7 @@ if uploaded_file != None:
         col0.title('Dashboard Nutrição - Primeira Consulta')
         col1.header('Primeira Consulta')
         col1.subheader(pc)
-    
+
         df['topografia'] = df['topografia'].map(topografias)
         df['analise_tc'] = df['analise_tc'].map(tomo)
 
@@ -116,7 +116,7 @@ if uploaded_file != None:
 
         graf_topografia = px.bar(freq_topografias, x='Frequência', y='Topografia', color='Frequência', title='Topografias - Primeira consulta', text_auto=True, orientation='h')
         col3.plotly_chart(graf_topografia, use_container_width=True)
-        
+
         df['modalidade_tratamento'] = df['modalidade_tratamento'].map(modalidade_tratamento)
         freq_modalidade = df['modalidade_tratamento'].value_counts().reset_index()
         freq_modalidade.columns = ['Modalidade', 'Frequência']
@@ -256,5 +256,3 @@ if uploaded_file != None:
         col28.plotly_chart(graf_ftva, use_container_width=True)
     else:
         st.write('Ainda em desenvolvimento')
-else:
-    st.write('Selecione o arquivo CSV com os dados a serem analisados.')
