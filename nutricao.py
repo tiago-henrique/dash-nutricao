@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+url = "https://lmu.famerp.br/tiago/indicadores.csv"
 st.set_page_config(layout='wide')
 
 #uploaded_file = st.file_uploader(
