@@ -50,58 +50,58 @@ ganho_ponderal = {
 perda_ponderal = {
     1: 'Intencional',
     2: 'Perda Ponderal não Intencional'
-    }
+}
 
-    asg = {
-        1: 'Bem nutrido',
-        2: 'Desnutrição suspeita ou moderada',
-        3: 'Gravemente desnutrido'
-    }
+asg = {
+    1: 'Bem nutrido',
+    2: 'Desnutrição suspeita ou moderada',
+    3: 'Gravemente desnutrido'
+}
 
-    via_alimentar = {
-        1: 'Oral',
-        2: 'Oral e suplementação nutricional',
-        3: 'Oral e enteral',
-        4: 'Enteral'
-    }
+via_alimentar = {
+    1: 'Oral',
+    2: 'Oral e suplementação nutricional',
+    3: 'Oral e enteral',
+    4: 'Enteral'
+}
 
-    modalidade = {
-        1: 'Presencial',
-        2: 'Telemedicina'
-    }
+modalidade = {
+    1: 'Presencial',
+    2: 'Telemedicina'
+}
 
-    tipo_via = {
-        1: 'SNE',
-        2: 'Gastrostomia',
-        3: 'Jejunostomia'
-    }
+tipo_via = {
+    1: 'SNE',
+    2: 'Gastrostomia',
+    3: 'Jejunostomia'
+}
+ 
+tomo = {
+    0: 'Não',
+    1: 'Sim'
+}
 
-    tomo = {
-        0: 'Não',
-        1: 'Sim'
-    }
+col0, col01 = st.columns([4,1])
+col1, col2 = st.columns(2)
+col3, col4 = st.columns(2)
+col5, col6 = st.columns(2)
+col7, col8 = st.columns(2)
+col9, col10 = st.columns(2)
+col11, col12 = st.columns(2)
+col13, col14 = st.columns(2)
+col14_1, col14_2 = st.columns(2)
+col14_3, col14_4 = st.columns(2)
+col15, col16 = st.columns([4,1])
+col17, col18 = st.columns(2)
+col19, col20 = st.columns(2)
+col21, col22 = st.columns(2)
+col23, col24 = st.columns(2)
+col25, col26 = st.columns(2)
+col27, col28 = st.columns(2)
+col29, col30 = st.columns(2)
+col31, col32 = st.columns(2)
 
-    col0, col01 = st.columns([4,1])
-    col1, col2 = st.columns(2)
-    col3, col4 = st.columns(2)
-    col5, col6 = st.columns(2)
-    col7, col8 = st.columns(2)
-    col9, col10 = st.columns(2)
-    col11, col12 = st.columns(2)
-    col13, col14 = st.columns(2)
-    col14_1, col14_2 = st.columns(2)
-    col14_3, col14_4 = st.columns(2)
-    col15, col16 = st.columns([4,1])
-    col17, col18 = st.columns(2)
-    col19, col20 = st.columns(2)
-    col21, col22 = st.columns(2)
-    col23, col24 = st.columns(2)
-    col25, col26 = st.columns(2)
-    col27, col28 = st.columns(2)
-    col29, col30 = st.columns(2)
-    col31, col32 = st.columns(2)
-
-    consulta = st.sidebar.selectbox('Selecione o tipo do atendimento', ('Primeira consulta', 'Retorno', 'Absenteísmo'))
+consulta = st.sidebar.selectbox('Selecione o tipo do atendimento', ('Primeira consulta', 'Retorno', 'Absenteísmo'))
 
     #Criando os Gráficos dos Pacientes em Primeira Consulta
     if(consulta == 'Primeira consulta'):
